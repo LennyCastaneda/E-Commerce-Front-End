@@ -1,0 +1,29 @@
+{
+  "name": "lcastaneda",
+  "version": "1.0.0",
+  "description": "AutoAnything coding exercise",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AutoAnything/lcastaneda.git"
+  },
+  "author": "lcastaneda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AutoAnything/lcastaneda/issues"
+  },
+  "homepage": "https://github.com/AutoAnything/lcastaneda#readme",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-inject": "^4.2.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-open": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "wiredep": "^4.0.0"
+  }
+}

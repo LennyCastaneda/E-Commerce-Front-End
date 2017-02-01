@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Headlights || Generic Company</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <!-- endbower -->
+    <!-- google fonts css  -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <!-- google fonts css  -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="web/styles/a.normalize.min.css">
+    <link rel="stylesheet" href="web/styles/main.css">
+    <!-- endinject -->
+    <!-- Pasted font -->
+    <script src="https://use.fontawesome.com/03cb9df13a.js"></script>
+</head>
+
+<body ng-controller="ProductsController as vm">
+    <!-- Main continer div -->
+    <div class="container text-center" id="">
+        <!-- Logo & cart div-->
+        <div class="row" style="padding-left:0; padding-right:0;">
+            <div class="col-md-offset-5 col-md-2 col-sm-6 col-xs-6">
+                <img src="../../web/images/logo.png" id="logo-image" />
+            </div>
+            <div class="col-md-1 col-sm-1 col-sm-offset-2 col-xs-2 col-xs-offset-3 btn btn-md cart">
+                Cart
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="">
+            <img id="u37_img" src="../../web/images/banner.jpg" class="img-responsive" alt="Responsive image" />
+        </div>
+        <!-- Header buttons -->
+        <div class="decorative-buttons header-btns text-center">
+            <div class="gradient-button">
+                <i class="fa fa-3x fa-truck" aria-hidden="true"></i>
+                <span class="bold">
+                        Free Shipping
+                    </span>
+                <br/> On Orders over $99
+            </div>
+            <div class="gradient-button">
+                <i class="fa fa-3x fa-exchange" aria-hidden="true"></i>
+                <span class="bold">
+                        Free Returns
+                    </span>
+                <br/> Return Label Included
+            </div>
+            <div class="gradient-button">
+                <i class="fa fa-3x fa-gift" aria-hidden="true"></i>
+                <span class="bold">
+                        Send a Gift
+                    </span>
+                <br/> Choose your design
+            </div>
+        </div>
+        <!-- Product table for desktop view-->
+        <div class="body-container">
+            <!-- product button filter only show when in mobile view -->
+            <div id="mobile-filter">
+                <div class="panel-group">
+                    <div class="row">
+                        <div class="btn btn-md btn-default col-xs-offset-9 col-xs-2" data-toggle="collapse" data-target="#filter-collapse">
+                            Filter
+                        </div>
+                    </div>
+                    <!-- Collaspe boxes -->
+                    <div class="panel panel-default collapse" id="filter-collapse">
+                        <!-- Brand -->
+                        <div class="panel-body">
+                            <div>
+                                <a class="pull-left" data-toggle="collapse" href="#see-more-brand">Brand</a> &nbsp;
+                                <a class="pull-right" data-toggle="collapse" href="#see-more-brand"><span class="glyphicon glyphicon-plus"></span></a>
+                            </div>
+                            <div class="panel-body collapse" id="see-more-brand">
+                                <div ng-repeat="brand in vm.brands track by $index" class="text-left">
+                                    <input type="checkbox" ng-change="vm.onBrandChange(brand)" ng-model="vm.brandsChecked[$index]"> {{ brand }} </input>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Style -->
+                        <div class="panel-body">
+                            <div>
+                                <a class="pull-left" data-toggle="collapse" href="#see-more-style">Style</a> &nbsp;
+                                <a class="pull-right" data-toggle="collapse" href="#see-more-style"><span class="glyphicon glyphicon-plus"></span></a>
+                            </div>
+                            <div class="panel-body collapse" id="see-more-style">
+                                <div ng-repeat="style in vm.styles track by $index" class="text-left">
+                                    <input type="checkbox" ng-change="vm.onStyleChange(style)" ng-model="vm.stylesChecked[$index]"> {{ style }} </input>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Color -->
+                        <div class="panel-body">
+                            <div>
+                                <a class="pull-left" data-toggle="collapse" href="#see-more-color">Color</a> &nbsp;
+                                <a class="pull-right" data-toggle="collapse" href="#see-more-color"><span class="glyphicon glyphicon-plus"></span></a>
+                            </div>
+                            <div class="panel-body collapse" id="see-more-color">
+                                <div ng-repeat="color in vm.colors track by $index" class="text-left">
+                                    <input type="checkbox" ng-change="vm.onColorChange(color)" ng-model="vm.colorsChecked[$index]"> {{ color }} </input>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Price Range -->
+                        <div class="panel-body">
+                            <div>
+                                <a class="pull-left" data-toggle="collapse" href="#see-more-price">Price Range</a> &nbsp;
+                                <a class="pull-right" data-toggle="collapse" href="#see-more-price"><span class="glyphicon glyphicon-plus"></span></a>
+                            </div>
+                            <div class="panel-body collapse" id="see-more-price">
+                                <div ng-repeat="priceRange in vm.priceRanges track by $index" class="text-left">
+                                    <input type="checkbox" ng-change="vm.onPriceRangeChange(priceRange)" ng-model="vm.priceRangesChecked[$index]"> {{ priceRange }} </input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-container clearfix">
+                <div class="search-container-left">
+                    <div class="navigation well checkboxes">
+                        <h2 class="checkbox-title">
+                            NARROW YOUR RESULTS
+                        </h2>
+                        <hr class="hr">
+                        <!-- brands -->
+                        <div>
+                            <h3 class="box-text">Brands</h3>
+                            <div ng-repeat="brand in vm.brands track by $index" class="text-left checkbox-options">
+                                <input type="checkbox" ng-change="vm.onBrandChange(brand)" ng-model="vm.brandsChecked[$index]"> {{ brand }} </input>
+                            </div>
+                        </div>
+                        </br>
+                        <div class="seeMore text-left" onclick="$('#see-more').toggle(); $('#see-more-clicked').hide(); $('#color-boxes').hide()" id="see-more-clicked">
+                            See more
+                        </div>
+                        <br>
+                        <hr class="hr">
+                        <br>
+                        <div class="text-left" id="color-boxes">
+                            <h3 class="box-text">Color</h3>
+                            <div class="color-filter black">
+                                <div>
+                                </div>
+                            </div>
+                            <div class="color-filter blue">
+                                <div>
+                                </div>
+                            </div>
+                            <div class="color-filter red">
+                                <div>
+                                </div>
+                            </div>
+                            <div class="color-filter grey">
+                                <div>
+                                </div>
+                            </div>
+                            <div class="color-filter green">
+                                <div>
+                                </div>
+                            </div>
+                            <div class="color-filter yellow">
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="see-more">
+                            <!-- style -->
+                            <div>
+                                <h3 class="box-text">Style</h3>
+                                <div ng-repeat="style in vm.styles track by $index" class="text-left checkbox-options">
+                                    <input type="checkbox" ng-change="vm.onStyleChange(style)" ng-model="vm.stylesChecked[$index]"> {{ style }} </input>
+                                </div>
+                            </div>
+                            </br>
+                            <hr class="hr">
+                            <!-- color -->
+                            <div>
+                                <h3 class="box-text">Color</h3>
+                                <div ng-repeat="color in vm.colors track by $index" class="text-left checkbox-options">
+                                    <input type="checkbox" ng-change="vm.onColorChange(color)" ng-model="vm.colorsChecked[$index]"> {{ color }} </input>
+                                </div>
+                            </div>
+                            </br>
+                            <hr class="hr">
+                            <!-- price range -->
+                            <div>
+                                <h3 class="box-text">Price Range</h3>
+                                <div ng-repeat="priceRange in vm.priceRanges track by $index" class="text-left checkbox-options">
+                                    <input type="checkbox" ng-change="vm.onPriceRangeChange(priceRange)" ng-model="vm.priceRangesChecked[$index]" \> {{ priceRange }} </input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-container-right">
+                    <div class="product product-well text-left hovereffect" ng-repeat="row in vm.getFilteredProducts() track by $index" data-toggle="modal" data-target="#modal" ng-click="vm.loadModal(row)">
+                        <div class="panel-body">
+                            <img id="product-image" ng-src="{{row.imageUrl}}" />
+                            <br/>
+                        </div>
+                        <rating value="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"> </rating>
+                        <div class="rating">
+                            <span ng-repeat="n in [5, 4, 3, 2, 1]" ng-class="{ rated : n <= row.rating }">☆</span>
+                        </div>
+                        <hr noshade>
+                        <strong class="block">
+                            {{row.productName}}
+                        </strong>
+                        <small class="salePrice">{{row.salePrice}}</small>
+                        <div class="overlay">
+                            <div class="quick-view-text">QUICK VIEW</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade container" id="modal" tabindex="-1" role="dialog" aria-labelledby="ProductModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <h3 class="modal-title text-left" id="modalLabel">    
+                                    {{ vm.selectedProduct.productName }}
+                                </h3>
+                            <h3 class="modal-title text-left product-price" id="modalLabel">    
+                                    {{ vm.selectedProduct.dollarAmount | currency }}
+                                </h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel-body">
+                                <img class="modal-product-image" ng-src="{{vm.selectedProduct.imageUrl}}" />
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="quantity-text text-left qty col-md-2 col-xs-2">
+                                Quantity
+                            </div>
+                            <div class="modal-footer col-md-1 col-offset-2 col-xs-4">
+                                <select class="form-control">
+                                    <option value="one">1</option>
+                                    <option value="two">2</option>
+                                    <option value="three">3</option>
+                                    <option value="four">4</option>
+                                    <option value="five">5</option>
+                                </select>
+                            </div>
+                            <button type="button" class="col-md-6 col-xs-2 btn btn-danger cart-btn">
+                                ADD TO CART
+                            </button>
+                            <div class="col align-self-start shipping-text shipping">
+                                Free Shipping!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="col-md-12 col-xs-12 footer">
+            <div class="row foot">
+                <div class="col-xs-2">Copyright &copy;2016</div>
+                <div class="col-xs-2"><a href="#">Privacy Notice</a></div>
+                <div class="col-xs-2"><a href="#">Contact Us</a></div>
+                <div class="col-xs-2"><a href="#">Locations</a></div>
+                <div class="col-xs-4">Call Us! 1-800-000-0000</div>
+            </div>
+        </div>
+    </div>
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="app/app.module.js"></script>
+    <script src="app/product-grid/product-controller.js"></script>
+    <script src="app/product-grid/product-factory.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>

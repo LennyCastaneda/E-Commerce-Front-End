@@ -1,0 +1,26 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fswiss\fcharset204 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0     vm.getFilteredProducts = function() \{\
+            // if no filter selected then return products as is.\
+            if (vm.selectedBrands.length === 0 && vm.selectedStyles.length === 0) return vm.products; \
+\
+            // _.filter takes in predicate function that returns a boolean for each element in the array, \
+            //if true then element is inculded else false element is not included in the result of this filter function.\
+            // start off with filtered variable cotaining all products\
+            var filtered = vm.products;\
+            // If there are brands selected for filtering, then filter by those brands\
+            if (vm.selectedBrands.length > 0)\
+                filtered = _.filter(filtered, function(p) \{return vm.selectedBrands.indexOf(p.brand) >= 0;\});\
+            // If there are styles selected then filter by style\
+            if (vm.selectedStyles.length > 0)\
+                // predicate function tests to see if the selectedStyles contains the style of the product in the products array by checking if the index is NOT -1.\
+                filtered = _.filter(filtered, function(p) \{return vm.selectedStyles.indexOf(p.style) >= 0;\});\
+\
+                return filtered;\
+        \};\
+}

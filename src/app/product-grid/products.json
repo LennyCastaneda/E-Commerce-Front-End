@@ -1,0 +1,103 @@
+{
+  "products": [
+    {
+      "id": "5743a43aaf03dd6987babfae",
+      "productName": "Spyder Headlights",
+      "salePrice": "From $60/pair",
+      "imageUrl": "../../web/images/product-images/headlights/spyder_headlights_hero.png",
+      "rating" : 4,
+      "description" : "Step up the style of your asphalt devil with fresh-looking Spyder Headlights. These sharp, stylish upgrades are custom-fit to directly replace your stock headlights.",
+      "brand" : "Spyder",
+      "colors": ["black", "chrome"],
+      "styles": ["Halogen", "LED"]
+    },
+    {
+      "id": "5743a43ad593219e4e167ddf",
+      "productName": "Anzo USA Headlights",
+      "salePrice": "From $50/pair",
+      "imageUrl": "../../web/images/product-images/headlights/anzo_usa_headlights_hero_3.png",
+      "rating" : 4,
+      "description" : "Effortlessly light up the road while showing off impressive style with Anzo USA Headlights. These high-efficiency headlights are custom-made specifically for your vehicle, ensuring easy plug-and-play installation.",
+      "brand" : "Anzo",
+      "colors": ["black", "Chrome"],
+      "styles": ["Halo", "LED"]
+    },
+    {
+      "id": "5743a43aa55785d9c9da0b34",
+      "productName": "Spec-D Headlights",
+      "salePrice": "From $70/pair",
+      "imageUrl": "../../web/images/product-images/headlights/spec-d_headlights.png",
+      "rating" : 5,
+      "description" : "Spec-D Headlights are the perfect way to replace your fading factory headlights without blowing a fuse in your mod budget. Spec-Ds bolt directly in place of your stock lights and boast modern style.",
+      "brand" : "Spec-D Tuning",
+      "colors": ["black", "blue", "chrome", "clear"],
+      "styles": ["Euro", "Projector"]
+    },
+    {
+      "id": "5743a43af7ce0f0087583b83",
+      "productName": "Oracle Headlight Halo Kits",
+      "salePrice": "From $80/pair",
+      "imageUrl": "../../web/images/product-images/headlights/oracle_headlight_halo_kits_hero.png",
+      "rating" : 2,
+      "description" : "Give your ride impressive style with an Oracle Headlight Halo Kit. These innovative halo headlights are vivid enough to use as daytime running lights and are custom-made for direct replacement into your existing OE lights.",
+      "brand" : "Oracle",
+      "colors": ["amber", "blue"],
+      "styles": ["Halo"]
+    },
+    {
+      "id": "5743a43a19af035c73499c22",
+      "productName": "Oracle Headlights",
+      "salePrice": "From $65/pair",
+      "imageUrl": "../../web/images/product-images/headlights/oracle_headlights_hero.png",
+      "rating" : 3,
+      "description" : "Give your ride the head-turning look of halos with Oracle Headlights.",
+      "brand" : "Oracle",
+      "colors": ["amber", "blue", "green", "white", "multi-color"],
+      "styles": ["Conversion", "Halo", "Halogen", "LED"]
+    },
+    {
+      "id": "5743a43a6461ffff62886e58",
+      "productName": "Oracle Sealed Beam Conversion Headlights",
+      "salePrice": "From $65/pair",
+      "imageUrl": "../../web/images/product-images/headlights/oracle_sealed_beam_conversion_headlights_hero.png",
+      "rating" : 4,
+      "description" : "Give your ride the head-turning look of halos with Oracle Sealed Beam Conversion Headlights. These innovative car headlights use halogen H4 bulbs (not included) and come pre-installed with high-tech SMD halos in a range of color options.",
+      "brand" : "Oracle",
+      "colors": ["amber", "blue", "green", "red", "multi-color"],
+      "styles": ["Conversion", "Halo", "Halogen", "LED"]
+    },
+    {
+      "id": "5743a43a6c804080ca984763",
+      "productName": "Rigid Industries Truck-Lite LED Replacement Headlights",
+      "salePrice": "From $67/pair",
+      "imageUrl": "../../web/images/product-images/headlights/rigid_industries_truck_lite_headlights_hero.png",
+      "rating" : 3,
+      "description" : "Revolutionize your front-end illumination with Rigid Industries Truck-Lite LED Replacement Headlights. These direct OE replacement lights give your front-end candlepower a significant boost and are built to endure the rigors of the road.",
+      "brand" : "Rigid Industries",
+      "colors": null,
+      "styles": ["LED"]
+    },
+    {
+      "id": "5743a43a4012f5c6c04c4b36",
+      "productName": "IPCW Headlights",
+      "salePrice": "From $87/pair",
+      "imageUrl": "../../web/images/product-images/headlights/ipcw_headlights_hero.png" ,
+      "rating" : 1,
+      "description" : "Amp up your vehicle's light output and style with custom-crafted IPCW Headlights. Choose diamond-cut headlights for a cleaner look or Euro-style projector headlights for a more focused beam.",
+      "brand" : "IPCW",
+      "colors": null,
+      "styles": ["Halo", "Euro", "Projector"]
+    },
+    {
+      "id": "5743a43a773be4d5dd1fc6da",
+      "productName": "Hella Vision Plus Conversion Headlights",
+      "salePrice": "From $20/pair",
+      "imageUrl": "../../web/images/product-images/headlights/hella_vision_plus_conversion_headlights_hero.png",
+      "rating" : 4,
+      "description" : "Renovate your ride’s light array with Hella Vision Plus Conversion Headlights. These sealed beam assemblies are designed to simply replace your original headlamps and produce up to 50% more light output for low beams & up to 25% more powerful high beams.",
+      "brand" : "Hella",
+      "colors": null,
+      "styles": ["Conversion"]
+    }
+  ]
+}
